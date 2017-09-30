@@ -4,15 +4,13 @@ import katas.gildedrose.*
 
 class BackstagePass(item: Item) : PerishableItem(item) {
 
-    override fun before() {
+    override fun timeHasPassed() {
         item.increaseQuality(by = when {
-            item.expiresWithin(0..5) -> 3
-            item.expiresWithin(6..10) -> 2
+            item.expiresWithin(0..4) -> 3
+            item.expiresWithin(5..9) -> 2
             else -> 1
         })
-    }
 
-    override fun after() {
         if (item.isPastSellDate()) {
             item.lostValue()
         }

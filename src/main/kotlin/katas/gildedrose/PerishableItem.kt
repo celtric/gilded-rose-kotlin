@@ -5,21 +5,15 @@ const val MAX_QUALITY = 50
 
 open class PerishableItem(val item: Item) {
 
-    fun update() {
-        before()
-        timePasses()
-        after()
-    }
-
-    open fun before() {
-        item.decreaseQuality()
-    }
-
-    private fun timePasses() {
+    fun timePasses() {
         item.sellIn--
+
+        timeHasPassed()
     }
 
-    open fun after() {
+    open fun timeHasPassed() {
+        item.decreaseQuality()
+
         if (item.isPastSellDate()) {
             item.decreaseQuality()
         }

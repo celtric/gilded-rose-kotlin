@@ -7,11 +7,9 @@ import katas.gildedrose.isPastSellDate
 
 class AgedBrie(item: Item) : PerishableItem(item) {
 
-    override fun before() {
+    override fun timeHasPassed() {
         item.increaseQuality()
-    }
 
-    override fun after() {
         if (item.isPastSellDate()) {
             item.increaseQuality()
         }
