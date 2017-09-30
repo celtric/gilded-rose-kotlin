@@ -12,7 +12,7 @@ class GildedRose(internal var items: Array<Item>) {
 
     private fun perishableItem(item: Item) = when {
         item.name.equals("Aged Brie") -> AgedBrie(item)
-        item.name.equals("Backstage passes to a TAFKAL80ETC concert") -> BackstagePass(item)
+        item.name.startsWith("Backstage pass") -> BackstagePass(item)
         item.name.equals("Sulfuras, Hand of Ragnaros") -> null
         else -> PerishableItem(item)
     }
