@@ -16,3 +16,7 @@ fun Item.increaseQuality() {
 }
 
 fun Item.isPastSellDate() = sellIn < 0
+
+fun Item.lostValue() {
+    quality = 0
+}
