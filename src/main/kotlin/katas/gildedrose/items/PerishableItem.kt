@@ -13,9 +13,9 @@ open class PerishableItem(val item: Item) {
     }
 
     open fun timeHasPassed() {
-        item.decreaseQuality()
-
         if (item.isPastSellDate()) {
+            item.decreaseQuality(2)
+        } else {
             item.decreaseQuality()
         }
     }
