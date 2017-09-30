@@ -1,7 +1,8 @@
-package katas.gildedrose
+package katas.gildedrose.items
 
-const val MIN_QUALITY = 0
-const val MAX_QUALITY = 50
+import katas.gildedrose.Item
+import katas.gildedrose.decreaseQuality
+import katas.gildedrose.isPastSellDate
 
 open class PerishableItem(val item: Item) {
 

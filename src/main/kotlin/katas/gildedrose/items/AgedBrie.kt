@@ -1,7 +1,6 @@
 package katas.gildedrose.items
 
 import katas.gildedrose.Item
-import katas.gildedrose.PerishableItem
 import katas.gildedrose.increaseQuality
 import katas.gildedrose.isPastSellDate
 

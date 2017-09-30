@@ -2,6 +2,7 @@ package katas.gildedrose
 
 import katas.gildedrose.items.AgedBrie
 import katas.gildedrose.items.BackstagePass
+import katas.gildedrose.items.PerishableItem
 
 class GildedRose(internal var items: Array<Item>) {
 

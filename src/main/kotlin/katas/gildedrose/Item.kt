@@ -7,6 +7,9 @@ class Item(var name: String, var sellIn: Int, var quality: Int) {
     }
 }
 
+const val MIN_QUALITY = 0
+const val MAX_QUALITY = 50
+
 fun Item.decreaseQuality() {
     quality = (quality - 1).coerceAtLeast(MIN_QUALITY)
 }
