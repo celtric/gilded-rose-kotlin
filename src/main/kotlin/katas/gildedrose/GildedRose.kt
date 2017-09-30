@@ -6,9 +6,7 @@ import katas.gildedrose.items.BackstagePass
 class GildedRose(internal var items: Array<Item>) {
 
     fun updateQuality() {
-        for (i in items.indices) {
-            perishableItem(items[i])?.update()
-        }
+        items.forEach { perishableItem(it)?.update() }
     }
 
     private fun perishableItem(item: Item) = when {
