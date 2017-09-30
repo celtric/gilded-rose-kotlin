@@ -2,18 +2,19 @@ package katas.gildedrose.items
 
 import katas.gildedrose.Item
 import katas.gildedrose.PerishableItem
+import katas.gildedrose.increaseQuality
 
 class BackstagePass(item: Item) : PerishableItem(item) {
 
     override fun update() {
-        increaseQuality()
+        item.increaseQuality()
 
         if (item.sellIn < 11) {
-            increaseQuality()
+            item.increaseQuality()
         }
 
         if (item.sellIn < 6) {
-            increaseQuality()
+            item.increaseQuality()
         }
 
         item.sellIn--
