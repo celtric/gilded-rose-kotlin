@@ -11,8 +11,8 @@ fun Item.decreaseQuality() {
     quality = (quality - 1).coerceAtLeast(MIN_QUALITY)
 }
 
-fun Item.increaseQuality() {
-    quality = (quality + 1).coerceAtMost(MAX_QUALITY)
+fun Item.increaseQuality(by: Int = 1) {
+    quality = (quality + by).coerceAtMost(MAX_QUALITY)
 }
 
 fun Item.isPastSellDate() = sellIn < 0
