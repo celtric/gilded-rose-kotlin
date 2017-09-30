@@ -5,21 +5,23 @@ const val MAX_QUALITY = 50
 
 open class PerishableItem(val item: Item) {
 
-    open fun update() {
+    fun update() {
+        before()
+        timePasses()
+        after()
+    }
+
+    open fun before() {
         item.decreaseQuality()
+    }
 
+    private fun timePasses() {
         item.sellIn--
+    }
 
+    open fun after() {
         if (item.sellIn < 0) {
             item.decreaseQuality()
         }
     }
-}
-
-fun Item.decreaseQuality() {
-    quality = (quality - 1).coerceAtLeast(MIN_QUALITY)
-}
-
-fun Item.increaseQuality() {
-    quality = (quality + 1).coerceAtMost(MAX_QUALITY)
 }

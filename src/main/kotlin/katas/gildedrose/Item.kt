@@ -6,3 +6,11 @@ class Item(var name: String, var sellIn: Int, var quality: Int) {
         return this.name + ", " + this.sellIn + ", " + this.quality
     }
 }
+
+fun Item.decreaseQuality() {
+    quality = (quality - 1).coerceAtLeast(MIN_QUALITY)
+}
+
+fun Item.increaseQuality() {
+    quality = (quality + 1).coerceAtMost(MAX_QUALITY)
+}

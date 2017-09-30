@@ -6,11 +6,11 @@ import katas.gildedrose.increaseQuality
 
 class AgedBrie(item: Item) : PerishableItem(item) {
 
-    override fun update() {
+    override fun before() {
         item.increaseQuality()
+    }
 
-        item.sellIn--
-
+    override fun after() {
         if (item.sellIn < 0) {
             item.increaseQuality()
         }
