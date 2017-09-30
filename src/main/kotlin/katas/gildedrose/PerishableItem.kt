@@ -20,7 +20,7 @@ open class PerishableItem(val item: Item) {
     }
 
     open fun after() {
-        if (item.sellIn < 0) {
+        if (item.isPastSellDate()) {
             item.decreaseQuality()
         }
     }

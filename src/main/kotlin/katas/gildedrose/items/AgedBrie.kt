@@ -3,6 +3,7 @@ package katas.gildedrose.items
 import katas.gildedrose.Item
 import katas.gildedrose.PerishableItem
 import katas.gildedrose.increaseQuality
+import katas.gildedrose.isPastSellDate
 
 class AgedBrie(item: Item) : PerishableItem(item) {
 
@@ -11,7 +12,7 @@ class AgedBrie(item: Item) : PerishableItem(item) {
     }
 
     override fun after() {
-        if (item.sellIn < 0) {
+        if (item.isPastSellDate()) {
             item.increaseQuality()
         }
     }
