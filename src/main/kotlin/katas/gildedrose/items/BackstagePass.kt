@@ -5,11 +5,11 @@ import katas.gildedrose.*
 class BackstagePass(item: Item) : PerishableItem(item) {
 
     override fun before() {
-        when {
-            item.sellIn < 6 -> item.increaseQuality(3)
-            item.sellIn < 11 -> item.increaseQuality(2)
-            else -> item.increaseQuality()
-        }
+        item.increaseQuality(by = when {
+            item.expiresWithin(0..5) -> 3
+            item.expiresWithin(6..10) -> 2
+            else -> 1
+        })
     }
 
     override fun after() {

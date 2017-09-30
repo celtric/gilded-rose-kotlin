@@ -20,3 +20,5 @@ fun Item.isPastSellDate() = sellIn < 0
 fun Item.lostValue() {
     quality = 0
 }
+
+fun Item.expiresWithin(days: IntRange) = sellIn in days
